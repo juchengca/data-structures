@@ -37,4 +37,23 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3, 7]);
   });
+
+  it('should handle inserts of the same value"', function() {
+    binarySearchTree.insert(1);
+    binarySearchTree.insert(3);
+    binarySearchTree.insert(7);
+    binarySearchTree.insert(3);
+    expect(binarySearchTree.contains(3)).to.equal(true);
+  });
+
+  it('should count total nodes in tree', function() {
+    var nodeCount = 0;
+    var func = function() { nodeCount++; };
+    binarySearchTree.insert(2);
+    binarySearchTree.insert(3);
+    binarySearchTree.insert(7);
+    binarySearchTree.depthFirstLog(func);
+    expect(nodeCount).to.eql(4);
+  });
+
 });
