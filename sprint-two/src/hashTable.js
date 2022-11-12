@@ -47,8 +47,6 @@ HashTable.prototype.retrieve = function(k) {
     return undefined;
   }
   for (var i = 0; i < values.length; i++) {
-    console.log('in the loop in retrieve');
-    console.log(values);
     if (k === values[i][0]) {
       return values[i][1];
     }
